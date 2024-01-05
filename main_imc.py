@@ -1,5 +1,13 @@
 # Pregunta al usuario el número de pacientes
-num_pacientes = int(input("Número de Pacientes: "))
+while True:
+    try:
+        num_pacientes = int(input("Número de Pacientes: "))
+        if num_pacientes > 0:
+            break
+        else:
+            print("Lo siento, por favor ingresa un número válido mayor que 0.")
+    except ValueError:
+        print("Lo siento, por favor ingresa un número entero válido.")
 
 # Bucle para ingresar los datos de cada paciente
 while num_pacientes > 0:
@@ -7,13 +15,37 @@ while num_pacientes > 0:
     nombre_persona = input("Ingresa tu nombre: ")
 
     # Solicita la edad de la persona
-    edad = int(input("Ingresa tu Edad: "))
+    while True:
+        try:
+            edad = int(input("Ingresa tu Edad: "))
+            if edad > 0:
+                break
+            else:
+                print("Lo siento, por favor ingresa una edad válida mayor que 0.")
+        except ValueError:
+            print("Lo siento, por favor ingresa un número entero válido para la edad.")
 
     # Solicita la estatura de la persona
-    estatura = float(input("Ingresa tu altura: "))
+    while True:
+        try:
+            estatura = float(input("Ingresa tu altura: "))
+            if estatura > 0:
+                break
+            else:
+                print("Lo siento, por favor ingresa una estatura válida mayor que 0.")
+        except ValueError:
+            print("Lo siento, por favor ingresa un número válido para la estatura.")
 
     # Solicita el peso de la persona en kg
-    peso = float(input("Ingresa tu peso en kg: "))
+    while True:
+        try:
+            peso = float(input("Ingresa tu peso en kg: "))
+            if peso > 0:
+                break
+            else:
+                print("Lo siento, por favor ingresa un peso válido mayor que 0.")
+        except ValueError:
+            print("Lo siento, por favor ingresa un número válido para el peso.")
 
     # Calcula el índice de masa corporal (IMC)
     imc = peso / estatura**2
